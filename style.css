@@ -188,6 +188,6 @@ footer {
 	font-style: Regular;
 	font-size: 14px;
 	line-height: 100%;
-	color: #2965F1;
-	text-decoration: none;
+	color: #2965F1 !important;
+	text-decoration: none !important;
 }
