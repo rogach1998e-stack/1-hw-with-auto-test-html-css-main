@@ -1,7 +1,7 @@
 * {
     /* Свойства для сброса начальных стилей элементов */
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 
@@ -111,7 +111,7 @@ select {
 	line-height: 100%;
 	letter-spacing: 0%;
 	list-style-image: url('./img/solar_map-arrow-up-bold.svg');
-	padding-left: 20px;
+	padding-left: 0 0 0 20px;
 }
 
 .books-list {
@@ -135,6 +135,7 @@ select {
 	height: 36px;
 	border-width: 1px;
 	border-radius: 5px;
+	font-size: 16px;
 }
 
 .btn {
@@ -159,7 +160,9 @@ table {
     /* Стили для таблицы */
 	width: 300px;
 	height: 196px;
-	border: 1px solid #95A1BB
+	border: 1px solid #95A1BB;
+	font-size: 16px;
+	border-collapse: collapse;
 }
 
 th, td {
@@ -169,12 +172,13 @@ th, td {
 	font-size: 14px;
 	line-height: 100%;
 	letter-spacing: 0px;
+	padding: 12px 15px;
 }
 
 footer {
     /* Стили для футера */
 	background-color: #E3E5FF;
-	padding: 40px 0;
+	padding: 26px 0;
 }
 
 .footer-link {
