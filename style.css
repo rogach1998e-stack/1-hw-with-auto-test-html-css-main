@@ -9,7 +9,7 @@
     margin: 0 auto;
     width: 100%;
     /* 📍 Максимальная ширина для контейнера */
-	max-width: 1440px;
+	max-width: 1140px;
 }
 
 body {
@@ -34,6 +34,7 @@ header span {
     min-height: 100vh;
     /* 📍 Свойства flexbox для размещения container-a вертикально по центру */
 	display: flex;
+    align-items: center;
 }
 
 .main-section .wrapper {
@@ -46,7 +47,7 @@ header span {
 
 .text-wrapper {
     /* 📍 Cвойство для ограничения ширины блока с текстом в первой секции */
-	width: 425px;
+	max-width: 425px;
 	height: 180px;
 }
 
@@ -75,7 +76,7 @@ header span {
     /* 📍 Свойствa flexbox для отступов между элементами select, .info-wrapper и .skills-wrapper  */
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 60px;
 }
 
 select {
@@ -127,6 +128,10 @@ select, .text-field {
     /* 📍 Свойства flexbox для отступов между элементами в списках */
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 20px;
 }
 
 .frameworks-list {
@@ -140,6 +145,7 @@ select, .text-field {
     /* 📍 Свойства flexbox для расположения формы над элементами с классом .label */
     display: flex;
     flex-direction: column-reverse;
+    gap: 20px;
     /* order: 1; */
 }
 
@@ -147,6 +153,7 @@ select, .text-field {
     /* 📍 Свойства flexbox для расположения элементов с классом .label */
     display: flex;
     flex-direction: column;
+    gap: 20px;
     /* order: 2; */
 }
 
@@ -213,7 +220,6 @@ footer {
     background-color: rgba(163, 167, 255, 0.3);
     padding: 26px 0;
     /* 📍 Свойство для расположения ссылки горизонтально по центру */
-    display: flex;
     text-align: center;
 }
 
