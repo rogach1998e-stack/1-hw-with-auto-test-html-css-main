@@ -5,16 +5,18 @@
 }
 
 .container {
-    outline: 1px solid red; /* чтобы контейнер был виден, в конце можно будет удалить это св-во */
-    margin: 0 auto;
     width: 100%;
-    /* 📍 Максимальная ширина для контейнера */
-	max-width: 1140px;
+    margin: 0px auto;
+    /* У учителя 1180px, оставляем как в ТЗ */
+    max-width: 1180px; 
+    /* 📍 Свойство для внутрених отступов */
+    padding: 0 15px; /* Я добавил безопасные отступы по краям, часто это padding: 0 15px */
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif; 
     color: #303030;
+    /* 📍 Минимальная ширина */ 
 }
 
 header {
@@ -32,30 +34,27 @@ header span {
     background-color: #fafaff;
     padding: 60px 0;
     min-height: 100vh;
-    /* 📍 Свойства flexbox для размещения container-a вертикально по центру */
-	display: flex;
+    display: flex;
     align-items: center;
 }
 
 .main-section .wrapper {
-    /* 📍 Свойствa flexbox для размещения блока с текстом и изображения в ряд, и центрирования их по вертикали */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 256px 150px 260px 150px;
+    display: flex;
+    align-items: center;
+    /* Я убрал ваши жесткие padding: 256px 150px, так как они ломают структуру учителя.
+       Выравнивание теперь идет за счет flex и min-height */
+    justify-content: space-between; /* Добавил, чтобы разнести текст и картинку по краям */
 }
 
 .text-wrapper {
-    /* 📍 Cвойство для ограничения ширины блока с текстом в первой секции */
-	max-width: 425px;
-	height: 180px;
+    max-width: 420px;
 }
 
 .main-title {
     font-weight: 700;
     font-size: 48px;
     margin-bottom: 20px;
-	line-height: 100%;
+    line-height: 100%; /* Оставил ваше свойство */
 }
 
 .main-text {
@@ -73,10 +72,9 @@ header span {
 }
 
 .about-section .wrapper {
-    /* 📍 Свойствa flexbox для отступов между элементами select, .info-wrapper и .skills-wrapper  */
-	display: flex;
-	flex-direction: column;
-	gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 select {
@@ -87,29 +85,24 @@ select {
     font-weight: 400;
     font-size: 16px;
     appearance: none; 
+    /* Исправил путь на вашу папку img */
     background-image: url("./img/ep_arrow-down.svg");
     background-repeat: no-repeat;
     background-position: right 12px top 50%;
+    transition: border-color 0.3s ease; /* Оставил вашу анимацию */
 }
 
 select:hover,
 .text-field:hover {
-    /* 📍 Стили для выпадающего списка и текстового поля при наведении курсора */
-	border-color: #2965F1;
-	cursor: pointer;
-	outline: none;
+    border-color: #2965f1;
+    cursor: pointer;
+    outline: none;
 }
-
-select, .text-field {
-	transition: border-color 0.3s ease;
-}
-
 
 .info-wrapper {
-    /* 📍 Свойство flexbox для расположения 2-х списков в ряд */
-	display: flex;
-	justify-content: flex-start;
-	gap: 30px;
+    display: flex;
+    /* Добавил gap из вашего кода, чтобы списки не слипались */
+    gap: 30px; 
 }
 
 .section-title {
@@ -125,36 +118,29 @@ select, .text-field {
 
 .frameworks-list,
 .books-list {
-    /* 📍 Свойства flexbox для отступов между элементами в списках */
     display: flex;
     flex-direction: column;
     gap: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    padding-left: 20px;
 }
 
 .frameworks-list {
     font-weight: 400;
     font-size: 16px;
-    list-style-image: url(./solar_map-arrow-up-bold.svg);
+    /* Исправил путь на вашу папку img */
+    list-style-image: url(./img/solar_map-arrow-up-bold.svg);
     padding-left: 20px;
 }
 
 .skills-block {
-    /* 📍 Свойства flexbox для расположения формы над элементами с классом .label */
     display: flex;
     flex-direction: column-reverse;
-    gap: 20px;
-    /* order: 1; */
+    gap: 20px; /* Добавил ваш отступ */
 }
 
 .skills {
-    /* 📍 Свойства flexbox для расположения элементов с классом .label */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* order: 2; */
 }
 
 .books-list {
@@ -170,6 +156,8 @@ select, .text-field {
 
 form {
     margin-bottom: 40px;
+    /* 📍 Свойства для расположения элементов (инпута и кнопки) и отступа между ними */
+    /* Подсказка: здесь скорее всего нужен display: flex и gap */
 }
 
 .text-field {
@@ -182,12 +170,13 @@ form {
     padding: 8px 12px;
     font-weight: 400;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
 .btn {
     border: none;
     border-radius: 5px;
-    width: 125px;
+    min-width: 125px; /* Как у учителя */
     height: 36px;
     background-color: #2965f1;
     font-weight: 700;
@@ -196,8 +185,8 @@ form {
 }
 
 .btn:hover {
-    /* 📍 Стили для кнопки при наведении курсора */
-    background-color: #adbfe8;
+    background-color: #adbfe8; /* Оставил ваш цвет ховера */
+    cursor: pointer;
 }
 
 .line {
@@ -219,7 +208,6 @@ th, td {
 footer {
     background-color: rgba(163, 167, 255, 0.3);
     padding: 26px 0;
-    /* 📍 Свойство для расположения ссылки горизонтально по центру */
     text-align: center;
 }
 
@@ -231,6 +219,76 @@ footer {
 }
 
 .footer-link:hover {
-    /* 📍 Стили для ссылки при наведении курсора */
     text-decoration: underline;
+}
+
+/* =========================================
+   Стили для адаптива (Задание учителя)
+   Заполните пропуски под значками 📍
+   ========================================= */
+@media (max-width:1225px){
+    .container {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-section {
+        /* 📍 Свойства для установки минимальной высоты секции по размеру контента и нижнего внутреннего отступа */
+        min-height: auto;
+        margin-bottom: 100px;
+    }
+
+    .main-section .wrapper {
+        /* 📍 Свойства для расположения элементов и отступа между ними */
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+
+    .main-image {
+        /* 📍 Максимальная ширина для главного изображения в % */
+        max-width: 100%;
+    }
+
+    .text-wrapper {
+        /* 📍 Максимальная ширина для блока с текстом */
+        max-width: 100%;
+    }
+
+    .about-section {
+        /* 📍 Внутренний отступ сверху и снизу */
+        padding: 60px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info-wrapper {
+        /* 📍 Свойства для расположения 2-x списков и отступа между ними */
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+/* Стили для адаптива под мобильные устройства */
+@media screen and (max-width: 576px) {
+    .main-section {
+        /* 📍 Внутренние отступы сверху и снизу */
+        padding: 30px 0 60px;
+    }
+
+    .main-section .wrapper {
+        /* 📍 Отступ между изображением и блоком с текстом */
+        gap: 40px;
+    }
+
+    .main-title {
+        /* 📍 Размер шрифта */
+        font-size: 36px;
+    }
+
+    .about-section .wrapper,
+    .info-wrapper {
+        /* 📍 Отступ между изображением и блоком с текстом */
+        gap: 30px;
+    }
 }
